@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기초 인도네시아어 6강</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #58cc02, #46b000);
+      color: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 10px 24px rgba(70, 176, 0, 0.25);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.96;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 24px 0 14px;
+    }
+
+    .lesson-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ecfdf3;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .indo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .line {
+      font-size: 16px;
+      line-height: 1.75;
+      margin: 5px 0;
+    }
+
+    .label {
+      display: inline-block;
+      min-width: 110px;
+      color: #6b7280;
+      font-weight: 700;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    button {
+      border: none;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .play-btn {
+      background: #58cc02;
+      color: white;
+      box-shadow: 0 4px 0 #3d8f00;
+    }
+
+    .slow-btn {
+      background: #eef2ff;
+      color: #3730a3;
+      box-shadow: 0 4px 0 #c7d2fe;
+    }
+
+    .split-wrap {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed #d1d5db;
+    }
+
+    .split-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .split-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+    }
+
+    .split-label {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .role-box {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+    }
+
+    .role-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .dialog-line {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .speaker {
+      font-size: 13px;
+      font-weight: 800;
+      color: #15803d;
+      margin-bottom: 6px;
+    }
+
+    .quiz-wrap {
+      margin-top: 28px;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+    }
+
+    .progress-text {
+      font-size: 14px;
+      font-weight: 800;
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #58cc02;
+      transition: width 0.3s ease;
+    }
+
+    .question {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 10px;
+    }
+
+    .answer-btn {
+      background: white;
+      color: #111827;
+      border: 2px solid #d1d5db;
+      border-radius: 16px;
+      padding: 14px 16px;
+      text-align: left;
+      box-shadow: none;
+      font-weight: 700;
+    }
+
+    .answer-btn.correct {
+      background: #ecfdf3;
+      border-color: #22c55e;
+      color: #166534;
+    }
+
+    .answer-btn.wrong {
+      background: #fef2f2;
+      border-color: #ef4444;
+      color: #991b1b;
+    }
+
+    .result {
+      margin-top: 14px;
+      font-weight: 800;
+      font-size: 16px;
+      min-height: 24px;
+    }
+
+    .next-btn, .restart-btn {
+      margin-top: 14px;
+      background: #1f2937;
+      color: white;
+      box-shadow: 0 4px 0 #111827;
+    }
+
+    .tip {
+      margin-top: 18px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: #9a3412;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 26px; }
+      .indo { font-size: 24px; }
+      .question { font-size: 19px; }
+      .label { min-width: 95px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>기초 인도네시아어 6강</h1>
+      <p>4강·5강 복습: 전도 시작, 복음 핵심, 초대 전 짧은 실전 대화 연습</p>
+    </div>
+
+    <div class="section-title">1. 핵심 단어 복습</div>
+    <div class="lesson-grid" id="wordGrid"></div>
+
+    <div class="section-title">2. 핵심 문장 복습</div>
+    <div class="lesson-grid" id="sentenceGrid"></div>
+
+    <div class="section-title">3. 끊어 말하기 연습</div>
+    <div class="lesson-grid" id="splitGrid"></div>
+
+    <div class="section-title">4. 짧은 실전 대화 1</div>
+    <div class="role-box" id="rolePlay1"></div>
+
+    <div class="section-title">5. 짧은 실전 대화 2</div>
+    <div class="role-box" id="rolePlay2"></div>
+
+    <div class="section-title">6. 역할극 연습</div>
+    <div class="role-box" id="rolePlay3"></div>
+
+    <div class="quiz-wrap">
+      <div class="section-title">7. 퀴즈</div>
+      <div class="quiz-card">
+        <div class="progress-text" id="progressText">1 / 6</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="question" id="questionBox"></div>
+        <div class="answers" id="answersBox"></div>
+        <div class="result" id="resultBox"></div>
+        <div id="nextArea"></div>
+      </div>
+
+      <div class="tip">
+        6강은 새 문장보다 “이미 배운 문장을 입으로 바로 꺼내는 연습”이 핵심입니다. 먼저 부분 듣기, 그 다음 전체 듣기로 따라 말해보세요.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const reviewWords = [
+      { badge: "복습 단어", indo: "enak", koPron: "에낙", zhPron: "埃纳克", meaning: "맛있는 / 好吃" },
+      { badge: "복습 단어", indo: "suka", koPron: "수까", zhPron: "苏卡", meaning: "좋아하다 / 喜欢" },
+      { badge: "복습 단어", indo: "makan", koPron: "마깐", zhPron: "马坎", meaning: "먹다 / 吃" },
+      { badge: "복습 단어", indo: "minum", koPron: "미눔", zhPron: "米努姆", meaning: "마시다 / 喝" },
+      { badge: "복습 단어", indo: "agama", koPron: "아가마", zhPron: "阿加玛", meaning: "종교 / 宗教" },
+      { badge: "복습 단어", indo: "roh", koPron: "로흐", zhPron: "罗赫", meaning: "영 / 灵魂" },
+      { badge: "복습 단어", indo: "kembali", koPron: "끔발리", zhPron: "克姆巴利", meaning: "돌아가다 / 回去" },
+      { badge: "복습 단어", indo: "Yesus", koPron: "예수스", zhPron: "耶稣斯", meaning: "예수님 / 耶稣" }
+    ];
+
+    const reviewSentences = [
+      {
+        badge: "핵심 문장",
+        indo: "Permisi.",
+        koPron: "뻐르미시",
+        zhPron: "珀尔米西",
+        meaning: "실례합니다 / 打扰一下"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Kami orang Kristen.",
+        koPron: "까미 오랑 크리스텐",
+        zhPron: "卡米 欧朗 克里斯滕",
+        meaning: "저희는 그리스도인입니다 / 我们是基督徒"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Kami ingin berbagi kabar baik.",
+        koPron: "까미 인긴 버르바기 까바르 바이크",
+        zhPron: "卡米 因金 伯尔巴吉 卡巴尔 巴伊克",
+        meaning: "저희는 기쁜 소식을 나누고 싶어요 / 我们想分享好消息"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Kami sedang memberitakan Injil.",
+        koPron: "까미 쓰당 멤버리따깐 인질",
+        zhPron: "卡米 瑟当 门伯里塔坎 音吉尔",
+        meaning: "저희는 전도를 하고 있어요 / 我们正在传福音"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Apa agama Anda?",
+        koPron: "아빠 아가마 안다",
+        zhPron: "阿帕 阿加玛 安达",
+        meaning: "당신의 종교는 무엇인가요? / 你的宗教是什么？"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Yesus mengasihi Anda.",
+        koPron: "예수스 멍아시히 안다",
+        zhPron: "耶稣斯 孟阿西希 安达",
+        meaning: "예수님은 당신을 사랑해요 / 耶稣爱你"
+      }
+    ];
+
+    const splitPractice = [
+      {
+        badge: "끊어 말하기",
+        indo: "Manusia memiliki tubuh dan roh.",
+        koPron: "마누시아 머밀리끼 뚜부흐 단 로흐",
+        zhPron: "马努西亚 门米利基 图布 和 罗赫",
+        meaning: "사람은 육체와 영이 있어요 / 人有身体和灵魂",
+        parts: [
+          { text: "Manusia", label: "마누시아 / 马努西亚" },
+          { text: "memiliki tubuh", label: "머밀리끼 뚜부흐 / 门米利基 图布" },
+          { text: "dan roh", label: "단 로흐 / 和 罗赫" }
+        ]
+      },
+      {
+        badge: "끊어 말하기",
+        indo: "Roh berasal dari Tuhan dan harus kembali kepada-Nya.",
+        koPron: "로흐 버라살 다리 뚜한 단 하루스 끔발리 끄빠다냐",
+        zhPron: "罗赫 贝拉萨尔 达里 图汉 丹 哈鲁斯 克姆巴利 克帕达尼亚",
+        meaning: "영은 하나님으로부터 왔기에 반드시 하나님께 돌아가야 해요 / 灵魂来自上帝，必须归回上帝",
+        parts: [
+          { text: "Roh berasal dari Tuhan", label: "로흐 버라살 다리 뚜한 / 罗赫 贝拉萨尔 达里 图汉" },
+          { text: "dan harus kembali", label: "단 하루스 끔발리 / 丹 哈鲁斯 克姆巴利" },
+          { text: "kepada-Nya", label: "끄빠다냐 / 克帕达尼亚" }
+        ]
+      },
+      {
+        badge: "끊어 말하기",
+        indo: "Melalui Yesus, roh kita bisa kembali kepada Tuhan.",
+        koPron: "멀랄루이 예수스 로흐 끼따 비사 끔발리 끄빠다 뚜한",
+        zhPron: "梅拉卢伊 耶稣斯 罗赫 基塔 比萨 克姆巴利 克帕达 图汉",
+        meaning: "예수를 통해서 우리 영이 하나님께로 돌아갈 수 있어요 / 通过耶稣，我们的灵可以回到上帝那里",
+        parts: [
+          { text: "Melalui Yesus", label: "멀랄루이 예수스 / 梅拉卢伊 耶稣斯" },
+          { text: "roh kita bisa kembali", label: "로흐 끼따 비사 끔발리 / 罗赫 基塔 比萨 克姆巴利" },
+          { text: "kepada Tuhan", label: "끄빠다 뚜한 / 克帕达 图汉" }
+        ]
+      }
+    ];
+
+    const rolePlay1 = [
+      {
+        speaker: "A",
+        indo: "Permisi.",
+        koPron: "뻐르미시",
+        zhPron: "珀尔米西",
+        meaning: "실례합니다 / 打扰一下"
+      },
+      {
+        speaker: "A",
+        indo: "Kami orang Kristen.",
+        koPron: "까미 오랑 크리스텐",
+        zhPron: "卡米 欧朗 克里斯滕",
+        meaning: "저희는 그리스도인입니다 / 我们是基督徒"
+      },
+      {
+        speaker: "A",
+        indo: "Kami ingin berbagi kabar baik.",
+        koPron: "까미 인긴 버르바기 까바르 바이크",
+        zhPron: "卡米 因金 伯尔巴吉 卡巴尔 巴伊克",
+        meaning: "저희는 기쁜 소식을 나누고 싶어요 / 我们想分享好消息"
+      }
+    ];
+
+    const rolePlay2 = [
+      {
+        speaker: "A",
+        indo: "Apa agama Anda?",
+        koPron: "아빠 아가마 안다",
+        zhPron: "阿帕 阿加玛 安达",
+        meaning: "당신의 종교는 무엇인가요? / 你的宗教是什么？"
+      },
+      {
+        speaker: "A",
+        indo: "Yesus mengasihi Anda.",
+        koPron: "예수스 멍아시히 안다",
+        zhPron: "耶稣斯 孟阿西希 安达",
+        meaning: "예수님은 당신을 사랑해요 / 耶稣爱你"
+      }
+    ];
+
+    const rolePlay3 = [
+      {
+        speaker: "A",
+        indo: "Permisi.",
+        koPron: "뻐르미시",
+        zhPron: "珀尔米西",
+        meaning: "실례합니다 / 打扰一下"
+      },
+      {
+        speaker: "B",
+        indo: "Ya.",
+        koPron: "야",
+        zhPron: "呀",
+        meaning: "네 / 是"
+      },
+      {
+        speaker: "A",
+        indo: "Kami orang Kristen.",
+        koPron: "까미 오랑 크리스텐",
+        zhPron: "卡米 欧朗 克里斯滕",
+        meaning: "저희는 그리스도인입니다 / 我们是基督徒"
+      },
+      {
+        speaker: "A",
+        indo: "Kami ingin berbagi kabar baik.",
+        koPron: "까미 인긴 버르바기 까바르 바이크",
+        zhPron: "卡米 因金 伯尔巴吉 卡巴尔 巴伊克",
+        meaning: "저희는 기쁜 소식을 나누고 싶어요 / 我们想分享好消息"
+      },
+      {
+        speaker: "A",
+        indo: "Apa agama Anda?",
+        koPron: "아빠 아가마 안다",
+        zhPron: "阿帕 阿加玛 安达",
+        meaning: "당신의 종교는 무엇인가요? / 你的宗教是什么？"
+      },
+      {
+        speaker: "A",
+        indo: "Yesus mengasihi Anda.",
+        koPron: "예수스 멍아시히 안다",
+        zhPron: "耶稣斯 孟阿西希 安达",
+        meaning: "예수님은 당신을 사랑해요 / 耶稣爱你"
+      }
+    ];
+
+    function getVoice() {
+      const voices = speechSynthesis.getVoices();
+      return voices.find(v => v.lang && v.lang.toLowerCase().startsWith("id")) ||
+             voices.find(v => v.lang && v.lang.toLowerCase().startsWith("ms")) ||
+             voices.find(v => v.lang && v.lang.toLowerCase().startsWith("en"));
+    }
+
+    function speak(text, rate = 0.9) {
+      if (!("speechSynthesis" in window)) {
+        alert("이 브라우저는 음성 재생을 지원하지 않습니다.");
+        return;
+      }
+      speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      const voice = getVoice();
+      if (voice) utter.voice = voice;
+      utter.lang = voice?.lang || "id-ID";
+      utter.rate = rate;
+      utter.pitch = 1;
+      speechSynthesis.speak(utter);
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => {};
+      window.addEventListener("load", () => {
+        speechSynthesis.getVoices();
+      });
+    }
+
+    function createNormalCards(data, targetId) {
+      const target = document.getElementById(targetId);
+      target.innerHTML = data.map(item => `
+        <div class="card">
+          <div class="badge">${item.badge}</div>
+          <div class="indo">${item.indo}</div>
+          <div class="line"><span class="label">한글 발음</span>${item.koPron}</div>
+          <div class="line"><span class="label">中文发音</span>${item.zhPron}</div>
+          <div class="line"><span class="label">뜻</span>${item.meaning}</div>
+          <div class="btns">
+            <button class="play-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.9)">🔊 전체 듣기</button>
+            <button class="slow-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.65)">🐢 천천히</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function createSplitCards(data, targetId) {
+      const target = document.getElementById(targetId);
+      target.innerHTML = data.map(item => `
+        <div class="card">
+          <div class="badge">${item.badge}</div>
+          <div class="indo">${item.indo}</div>
+          <div class="line"><span class="label">한글 발음</span>${item.koPron}</div>
+          <div class="line"><span class="label">中文发音</span>${item.zhPron}</div>
+          <div class="line"><span class="label">뜻</span>${item.meaning}</div>
+          <div class="btns">
+            <button class="play-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.9)">🔊 전체 듣기</button>
+            <button class="slow-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.65)">🐢 천천히</button>
+          </div>
+          <div class="split-wrap">
+            <div class="split-title">끊어 듣기</div>
+            ${item.parts.map(part => `
+              <div class="split-item">
+                <div class="split-label">${part.label}</div>
+                <button class="slow-btn" onclick="speak('${part.text.replace(/'/g, "\\'")}', 0.75)">🔊 ${part.text}</button>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function createRolePlay(data, targetId) {
+      const target = document.getElementById(targetId);
+      target.innerHTML = `
+        <div class="role-title">말하는 순서대로 따라해보세요</div>
+        ${data.map(item => `
+          <div class="dialog-line">
+            <div class="speaker">${item.speaker}</div>
+            <div class="indo">${item.indo}</div>
+            <div class="line"><span class="label">한글 발음</span>${item.koPron}</div>
+            <div class="line"><span class="label">中文发音</span>${item.zhPron}</div>
+            <div class="line"><span class="label">뜻</span>${item.meaning}</div>
+            <div class="btns">
+              <button class="play-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.9)">🔊 듣기</button>
+              <button class="slow-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.65)">🐢 천천히</button>
+            </div>
+          </div>
+        `).join("")}
+      `;
+    }
+
+    createNormalCards(reviewWords, "wordGrid");
+    createNormalCards(reviewSentences, "sentenceGrid");
+    createSplitCards(splitPractice, "splitGrid");
+    createRolePlay(rolePlay1, "rolePlay1");
+    createRolePlay(rolePlay2, "rolePlay2");
+    createRolePlay(rolePlay3, "rolePlay3");
+
+    const quizData = [
+      {
+        question: "Permisi 뜻은 무엇일까요?",
+        options: ["실례합니다", "감사합니다", "천만에요"],
+        answer: "실례합니다"
+      },
+      {
+        question: "Apa agama Anda? 뜻은 무엇일까요?",
+        options: ["이름이 뭐예요?", "종교가 무엇인가요?", "어디서 왔나요?"],
+        answer: "종교가 무엇인가요?"
+      },
+      {
+        question: "Yesus mengasihi Anda 뜻은 무엇일까요?",
+        options: ["예수님은 당신을 사랑해요", "예수님은 교회에 계세요", "예수님은 선생님이에요"],
+        answer: "예수님은 당신을 사랑해요"
+      },
+      {
+        question: "roh 뜻은 무엇일까요?",
+        options: ["몸", "영", "교회"],
+        answer: "영"
+      },
+      {
+        question: "Kami orang Kristen 뜻은 무엇일까요?",
+        options: ["저희는 그리스도인입니다", "저희는 친구입니다", "저희는 가족입니다"],
+        answer: "저희는 그리스도인입니다"
+      },
+      {
+        question: "kembali 뜻은 무엇일까요?",
+        options: ["믿다", "돌아가다", "사랑하다"],
+        answer: "돌아가다"
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    const questionBox = document.getElementById("questionBox");
+    const answersBox = document.getElementById("answersBox");
+    const resultBox = document.getElementById("resultBox");
+    const nextArea = document.getElementById("nextArea");
+    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+
+    function updateProgress() {
+      progressText.textContent = `${Math.min(current + 1, quizData.length)} / ${quizData.length}`;
+      progressFill.style.width = `${(current / quizData.length) * 100}%`;
+    }
+
+    function renderQuiz() {
+      if (current >= quizData.length) {
+        progressText.textContent = "완료";
+        progressFill.style.width = "100%";
+        questionBox.textContent = `퀴즈 끝! 점수는 ${score} / ${quizData.length}`;
+        answersBox.innerHTML = "";
+        resultBox.textContent = score === quizData.length ? "정말 잘했어요! 🎉" : "좋아요. 다시 하면 더 잘할 수 있어요!";
+        nextArea.innerHTML = `<button class="restart-btn" onclick="restartQuiz()">다시 하기</button>`;
+        return;
+      }
+
+      updateProgress();
+      const q = quizData[current];
+      questionBox.textContent = q.question;
+      resultBox.textContent = "";
+      nextArea.innerHTML = "";
+
+      answersBox.innerHTML = q.options.map(opt => `
+        <button class="answer-btn" onclick="checkAnswer(this, '${opt.replace(/'/g, "\\'")}')">${opt}</button>
+      `).join("");
+    }
+
+    function checkAnswer(button, selected) {
+      const q = quizData[current];
+      const buttons = document.querySelectorAll(".answer-btn");
+
+      buttons.forEach(btn => btn.disabled = true);
+      buttons.forEach(btn => {
+        if (btn.textContent === q.answer) {
+          btn.classList.add("correct");
+        }
+      });
+
+      if (selected === q.answer) {
+        score++;
+        resultBox.textContent = "정답입니다!";
+        button.classList.add("correct");
+      } else {
+        resultBox.textContent = `아쉬워요. 정답은 "${q.answer}" 입니다.`;
+        button.classList.add("wrong");
+      }
+
+      nextArea.innerHTML = `<button class="next-btn" onclick="nextQuestion()">${current === quizData.length - 1 ? "결과 보기" : "다음 문제"}</button>`;
+      progressFill.style.width = `${((current + 1) / quizData.length) * 100}%`;
+    }
+
+    function nextQuestion() {
+      current++;
+      renderQuiz();
+    }
+
+    function restartQuiz() {
+      current = 0;
+      score = 0;
+      renderQuiz();
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
